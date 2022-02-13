@@ -30,11 +30,13 @@ for (const button of buttons){
    })
 }
 const validation = document.getElementById('validation');
-document.getElementById('submit').addEventListener('click',function(){
+const submit =document.getElementById('submit');
+submit.addEventListener('click',function(){
       const notifySuccess =document.getElementById('notify-success');
       const notifyWrong=document.getElementById('notify-wrong');
       if(validation.innerText == 0){
          alert ("Please Try Again Letter");
+         submit.setAttribute("disabled",true)
       }
       else if(parseInt( validation.innerText)<= 6){
         if(pinInput.value == calcInput.value){
