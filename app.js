@@ -16,8 +16,7 @@ const buttons = document.getElementsByClassName('button');
 const calcInput =document.getElementById('calc-input');
 for (const button of buttons){
     button.addEventListener('click',function(e){
-       
-       switch (e.target.innerText){
+            switch (e.target.innerText){
            case ('C'):
                calcInput.value = ''
                break;
@@ -26,7 +25,7 @@ for (const button of buttons){
                    break;
            default:
                calcInput.value +=e.target.innerText;
-       }
+                  }
    })
 }
 const validation = document.getElementById('validation');
@@ -34,7 +33,7 @@ const submit =document.getElementById('submit');
 submit.addEventListener('click',function(){
       const notifySuccess =document.getElementById('notify-success');
       const notifyWrong=document.getElementById('notify-wrong');
-      if(validation.innerText == 0){
+      if(parseInt(validation.innerText) < 1){
          alert ("Please Try Again Letter");
          submit.setAttribute("disabled",true)
       }
@@ -49,5 +48,5 @@ submit.addEventListener('click',function(){
            notifyWrong.style.display = 'block'
            validation.innerText = parseInt(validation.innerText) - 1;
         }
-      }
+    }
 })
